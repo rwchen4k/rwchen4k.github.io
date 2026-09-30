@@ -11,8 +11,8 @@
 | | |
 |---|---|
 | 线上博客 | <https://blog.rwchen.top> |
-| 源码仓库 | <https://github.com/ritchen/rw-chen.github.io> |
-| 作者 GitHub | <https://github.com/ritchen> |
+| 源码仓库 | <https://github.com/rwchen4k/rwchen4k.github.io> |
+| 作者 GitHub | <https://github.com/rwchen4k> |
 
 ---
 

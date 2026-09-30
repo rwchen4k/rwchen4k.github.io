@@ -9,7 +9,7 @@
 ## 1. 仓库结构速览
 
 ```
-ritchen/rw-chen.github.io/        ← 用户站点仓库，main 分支根目录 = 网站根
+rwchen4k/rwchen4k.github.io/      ← 用户站点仓库，main 分支根目录 = 网站根
 ├── CNAME                         ← blog.rwchen.top
 ├── 404.html                      ← NexT 自带 QQ 公益 404
 ├── index.html                    ← 首页
@@ -44,9 +44,9 @@ ritchen/rw-chen.github.io/        ← 用户站点仓库，main 分支根目录 
 **推荐拉取方式**：zip 下载
 
 ```bash
-curl -sL -o blog.zip https://api.github.com/repos/ritchen/rw-chen.github.io/zipball/main
-unzip -q blog.zip -d /tmp/rw-chen-blog/
-mv /tmp/rw-chen-blog/ritchen-rw-chen.github.io-* /tmp/rw-chen.github.io
+curl -sL -o blog.zip https://api.github.com/repos/rwchen4k/rwchen4k.github.io/zipball/main
+unzip -q blog.zip -d /tmp/rwchen4k-blog/
+mv /tmp/rwchen4k-blog/rwchen4k-rwchen4k.github.io-* /tmp/rwchen4k.github.io
 ```
 
 **推送走 SSH**（已配 key）：
@@ -60,7 +60,7 @@ git push origin main
 ## 3. 推送流程（标准操作）
 
 ```bash
-cd /tmp/rw-chen.github.io
+cd /tmp/rwchen4k.github.io
 
 # 1. 修改（按需）
 # 2. 提交
