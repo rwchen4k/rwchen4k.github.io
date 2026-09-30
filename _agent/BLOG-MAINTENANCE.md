@@ -30,26 +30,19 @@ rwchen4k/rwchen4k.github.io/      ← 用户站点仓库，main 分支根目录 
 
 ---
 
-## 2. 网络与拉取约束
+## 2. 拉取与推送
 
-⚠️ **本机 `github.com` 主页不通**（HTTP=000，超时 10s）。但以下可用：
-
-| 资源 | 状态 | 用法 |
-|---|---|---|
-| `raw.githubusercontent.com` | ✅ 通 | 直接 `curl` 拉单文件 |
-| `api.github.com` | ✅ 通 | 走 REST API |
-| `github.com`（HTTPS） | ❌ 不通 | git clone / `gh repo clone` 都卡 |
-| `git@github.com`（SSH） | ❌ 报"Cloning into..."假成功 | 不要用 |
-
-**推荐拉取方式**：zip 下载
+**拉取仓库**（二选一）：
 
 ```bash
-curl -sL -o blog.zip https://api.github.com/repos/rwchen4k/rwchen4k.github.io/zipball/main
-unzip -q blog.zip -d /tmp/rwchen4k-blog/
-mv /tmp/rwchen4k-blog/rwchen4k-rwchen4k.github.io-* /tmp/rwchen4k.github.io
+# 方式一：git clone
+git clone https://github.com/rwchen4k/rwchen4k.github.io.git
+
+# 方式二：gh CLI
+gh repo clone rwchen4k/rwchen4k.github.io
 ```
 
-**推送走 SSH**（已配 key）：
+**推送**（凭证已配置，直接 push）：
 
 ```bash
 git push origin main
@@ -60,7 +53,7 @@ git push origin main
 ## 3. 推送流程（标准操作）
 
 ```bash
-cd /tmp/rwchen4k.github.io
+cd rwchen4k.github.io
 
 # 1. 修改（按需）
 # 2. 提交
@@ -183,7 +176,6 @@ grep -rl '"hostname":"rwchen.xyz"' . --include="*.html"
 | ❌ 改 `js/` `css/` 里的 hash 文件 | NexT 编译产物，主题升级会被覆盖 |
 | ❌ 强推保护分支之外的内容 | main 是唯一 publish 分支 |
 | ❌ 改 `_config.yml` / 源文件 | 仓库里根本没有，别自己造 |
-| ❌ 用 `git clone` 拉仓库 | 本机 github.com 不通，会假成功 |
 
 ---
 
@@ -203,8 +195,7 @@ grep -rl '"hostname":"rwchen.xyz"' . --include="*.html"
 ## 8. 工具/技能备忘
 
 - `gh` CLI 已配置（token `ghp_UB...E1e4`，全权限）
-- `git` 已配 SSH key，可直接 push
-- 国内 github.com 主页不通 → 用 raw / api 替代
+- `git` 凭证已配置，clone / push 直接可用
 - OpenClaw `openclaw message send` 可给用户微信发推送通知（操作完告诉他一声）
 
 ---
@@ -213,11 +204,10 @@ grep -rl '"hostname":"rwchen.xyz"' . --include="*.html"
 
 | 问题 | 缓解方案 |
 |---|---|
-| 国内 github.com 主页封锁 | 用 zipball + api.github.com |
 | 仓库是产物不是源 | 改完自己渲染 HTML，不依赖 Hexo |
 | archives/categories 索引页同步工作量大 | 每次新增文章都要补 3 个索引文件 |
 | 无评论系统 | NexT 评论开关 `comments.style="tabs"` 但 `active=null`，实际无评论功能 |
 
 ---
 
-_Last updated: 2026-06-22 by rwchen + AI Agent_
+_Last updated: 2026-09-30 by rwchen + AI Agent_
